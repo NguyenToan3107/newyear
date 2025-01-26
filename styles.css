@@ -1,0 +1,234 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb); /* Gradient background */
+    background-size: 400% 400%; /* Tăng kích thước gradient */
+    color: #333;
+    animation: gradientBG 12s ease infinite; /* Thêm animation */
+    text-align: center;
+    overflow-x: hidden; /* Ẩn scroll ngang */
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%; /* Bắt đầu từ vị trí 0% */
+    }
+    50% {
+        background-position: 100% 50%; /* Di chuyển đến vị trí 100% */
+    }
+    100% {
+        background-position: 0% 50%; /* Quay lại vị trí 0% */
+    }
+}
+
+header {
+    padding: 20px;
+    color: #fff;
+}
+
+header h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1em;
+    margin: 0;
+}
+
+#photo-carousel {
+    padding: 20px 0;
+}
+
+.swiper-container {
+    width: 20%;
+    max-width: 20%;
+    margin: 0 auto;
+    padding: 10px; /* Thêm padding cho container */
+    overflow: hidden; /* Ẩn nội dung thừa */
+    border-radius: 15px; /* Bo góc container */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Đổ bóng */
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.swiper-slide {
+    flex: 0 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15px; /* Bo góc slide */
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Đổ bóng */
+    position: relative; /* Để tạo overlay */
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px; /* Bo góc ảnh */
+    transition: transform 0.5s ease; /* Hiệu ứng zoom nhẹ */
+}
+
+.swiper-slide:hover img {
+    transform: scale(1.05); /* Zoom nhẹ khi hover */
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    text-align: left;
+    color: #fff;
+    z-index: 2;
+}
+
+.slide-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+
+/* .slide-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+} */
+
+.slide-content p {
+    font-size: 0.8em;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+/* Overlay để làm tối ảnh */
+.swiper-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Overlay tối */
+    border-radius: 15px; /* Bo góc overlay */
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.swiper-slide:hover::before {
+    opacity: 1; /* Hiển thị overlay khi hover */
+}
+
+#interaction {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Khoảng cách giữa các nút */
+}
+
+.btn-primary, .btn-secondary {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px; /* Bo góc nút */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007BFF;
+    color: #fff;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-primary a {
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-secondary a {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    transform: translateY(-3px); /* Hiệu ứng nổi lên khi hover */
+}
+
+footer {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Background tối với độ trong suốt */
+    color: #fff;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 0.9em;
+    }
+
+    .slide-content h2 {
+        font-size: 1.2em;
+    }
+
+    .slide-content p {
+        font-size: 0.9em;
+    }
+
+    .btn-primary, .btn-secondary {
+        font-size: 1.1rem;
+        padding: 8px 16px;
+    }
+
+    .swiper-container {
+        width: 90%;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    header p {
+        font-size: 0.8em;
+    }
+
+    .slide-content h2 {
+        font-size: 1.1rem;
+    }
+
+    .slide-content p {
+        font-size: 1rem;
+    }
+
+    .btn-primary, .btn-secondary {
+        font-size: 1rem;
+        padding: 6px 12px;
+    }
+    .swiper-container {
+        width: 80%;
+        max-width: 90%;
+    }
+}

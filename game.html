@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trò chơi trả lời câu hỏi</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Trò chơi trả lời câu hỏi</h1>
+        <div class="wheel-container">
+            <div id="wheel" class="wheel">Quay</div>
+        </div>
+        <p id="score">Điểm: 0</p>
+        <div>
+            <button><a href="/index.html">Trở lại</a></button>
+                <button>Còn tiếp nha...</button>
+        </div>
+    </div>
+    
+    <!-- Modal câu hỏi -->
+    <div id="questionModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2 id="questionText"></h2>
+            <ul id="answersList">
+                <!-- Các đáp án sẽ được thêm bằng JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal kết thúc -->
+    <div id="endModal" class="modal">
+        <div class="modal-content">
+            <h2>Chúc mừng!</h2>
+            <p id="finalScore"></p>
+            <div>
+
+                <button id="playAgain">Chơi lại</button>
+                <button>Còn tiếp nha...</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
